@@ -18,6 +18,7 @@
 
 extern crate aligned;
 pub extern crate cortex_m_semihosting as semihosting;
+extern crate common;
 extern crate volatile_register;
 
 #[macro_use]
@@ -25,12 +26,13 @@ mod macros;
 
 #[macro_use]
 pub mod asm;
-pub mod ctxt;
 pub mod exception;
 pub mod interrupt;
 pub mod itm;
 pub mod peripheral;
 pub mod register;
+
+pub use common::ctxt;
 
 /// A reserved spot in the vector table
 #[derive(Clone, Copy)]
